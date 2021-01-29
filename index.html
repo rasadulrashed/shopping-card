@@ -25,11 +25,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="iphoneValue" type="text" class="form-control text-center" value="1">
-                           <button id="iphonePlusBtn" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="iphone_decrease" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="iphone_count" type="text" class="form-control text-center" value="1">
+                           <button id="iphone_increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5 id="iphone_total">$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -81,27 +81,27 @@
       //iphone case click plus icon
       document.getElementById("case_increse").addEventListener('click', function () {
          handleProductChange(true);
-   })
-   //upore bikolpo hisabe onclick use korte pari tag e
-   //onclick =handleProductChange(true);
+      })
+      //upore bikolpo hisabe onclick use korte pari tag e
+      //onclick =handleProductChange(true);
 
-   document.getElementById("case_decrease").addEventListener('click', function () {
-      handleProductChange(false);
-   })
-   function handleProductChange(isIncrese) {
-      const caseInput = document.getElementById("case_count");
-      const caseCount = parseInt(caseInput.value);
-      // const caseNewCount = caseCount - 1;
-      if(isIncrese == true){
-         caseNewCount = caseCount + 1;
+      document.getElementById("case_decrease").addEventListener('click', function () {
+         handleProductChange(false);
+      })
+      function handleProductChange(isIncrese) {
+         const caseInput = document.getElementById("case_count");
+         const caseCount = parseInt(caseInput.value);
+         // const caseNewCount = caseCount - 1;
+         if (isIncrese == true) {
+            caseNewCount = caseCount + 1;
+         }
+         if (isIncrese == false && caseCount > 1) {
+            caseNewCount = caseCount - 1;
+         }
+         caseInput.value = caseNewCount;
+         const caseTotal = caseNewCount * 59;
+         document.getElementById("case_total").innerText = '$' + caseTotal;
       }
-      if(isIncrese == false && caseCount > 1){
-         caseNewCount = caseCount - 1;
-      }
-      caseInput.value = caseNewCount;
-      const caseTotal = caseNewCount * 59;
-      document.getElementById("case_total").innerText = '$' + caseTotal;
-   }
 
       // //iphone case click plus icon
       // document.getElementById("case_increse").addEventListener('click', function () {
@@ -130,6 +130,61 @@
       //    const caseTotal = caseNewCount * 59;
       //    document.getElementById("case_total").innerText = '$' + caseTotal;
       // })
+
+
+
+
+
+      //iphone 11 128GB Black
+
+      document.getElementById("iphone_increase").addEventListener('click', function () {
+         iphoneHandleProductChange(true);
+      })
+
+      document.getElementById("iphone_decrease").addEventListener('click', function () {
+         iphoneHandleProductChange(false);
+      })
+
+      function iphoneHandleProductChange(isIphoneProduct) {
+         const iphoneInput = document.getElementById("iphone_count");
+         const iphoneCount = parseInt(iphoneInput.value);
+         if (isIphoneProduct == true) {
+            iphoneNewCount = iphoneCount + 1;
+         }
+         if (isIphoneProduct == false && iphoneCount > 1) {
+            iphoneNewCount = iphoneCount - 1;
+         }
+         iphoneInput.value = iphoneNewCount;
+         const iphoneTotal = iphoneNewCount * 1219;
+         document.getElementById("iphone_total").innerText = '$' + iphoneTotal;
+      }
+
+      // //iphone 11 128GB Black
+
+      //    document.getElementById("iphone_increase").addEventListener('click', function () {
+      //       //first step capture kora
+      //       const iphoneInput = document.getElementById("iphone_count");
+      //       const iphoneCount = parseInt(iphoneInput.value);
+
+      //       //increase kora
+      //       const iphoneNewCount = iphoneCount + 1;
+
+      //       // value set kora
+      //       iphoneInput.value = iphoneNewCount;
+
+      //       const iphoneTotal = iphoneNewCount * 1219;
+      //       document.getElementById("iphone_total").innerText = '$' + iphoneTotal;
+      //    })
+
+      //    document.getElementById("iphone_decrease").addEventListener('click', function () {
+      //       const iphoneInput = document.getElementById("iphone_count");
+      //       const iphoneCount = parseInt(iphoneInput.value);
+      //       const iphoneNewCount = iphoneCount - 1;
+      //       iphoneInput.value = iphoneNewCount;
+
+      //       const iphoneTotal = iphoneNewCount * 1219;
+      //       document.getElementById("iphone_total").innerText = '$' + iphoneTotal;
+      //    })
 
    </script>
 </body>
