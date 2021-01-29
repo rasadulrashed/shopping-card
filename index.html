@@ -91,6 +91,7 @@
       function handleProductChange(isIncrese) {
          const caseInput = document.getElementById("case_count");
          const caseCount = parseInt(caseInput.value);
+         let caseNewCount = caseCount;
          // const caseNewCount = caseCount - 1;
          if (isIncrese == true) {
             caseNewCount = caseCount + 1;
@@ -138,20 +139,21 @@
       //iphone 11 128GB Black
 
       document.getElementById("iphone_increase").addEventListener('click', function () {
-         iphoneHandleProductChange(true);
+         handleIphoneChange(true);
       })
 
       document.getElementById("iphone_decrease").addEventListener('click', function () {
-         iphoneHandleProductChange(false);
+         handleIphoneChange(false);
       })
 
-      function iphoneHandleProductChange(isIphoneProduct) {
+      function handleIphoneChange(isIncrese) {
          const iphoneInput = document.getElementById("iphone_count");
          const iphoneCount = parseInt(iphoneInput.value);
-         if (isIphoneProduct == true) {
+         let iphoneNewCount = iphoneCount;
+         if (isIncrese == true) {
             iphoneNewCount = iphoneCount + 1;
          }
-         if (isIphoneProduct == false && iphoneCount > 1) {
+         if (isIncrese == false && iphoneCount > 1) {
             iphoneNewCount = iphoneCount - 1;
          }
          iphoneInput.value = iphoneNewCount;
